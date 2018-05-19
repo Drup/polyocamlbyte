@@ -9,6 +9,8 @@ clean.byte: thing.byte
 thing.pdf: clean.byte thing.tex
 	pdflatex thing
 
-ocaml.pdf: thing.pdf
-	echo "#!/home/gabriel/.opam/tools/bin/ocamlrun" > ocaml.pdf
-	cat thing.pdf trailer >> ocaml.pdf
+ocaml.pdf: thing.pdf trailer
+	cat thing.pdf trailer > ocaml.pdf
+
+clean:
+	rm ocaml.pdf thing.pdf clean.byte thing.byte
