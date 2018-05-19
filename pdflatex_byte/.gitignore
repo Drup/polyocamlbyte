@@ -1,0 +1,7 @@
+auto/
+*.cm*
+*.aux
+*.log
+#*#
+*.byte
+*.pdf

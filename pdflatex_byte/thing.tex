@@ -1,0 +1,50 @@
+\documentclass{article}
+
+\pdfcompresslevel=0
+\usepackage{listings}
+
+\title{This PDF is an OCaml bytecode}
+\date{}
+
+\begin{document}
+
+\begingroup\relax
+\immediate\pdfobj stream
+attr {/Type /EmbeddedFile} file {clean.byte}
+\immediate\pdfobj{<<
+  /Type /Filespec
+  /F (thing.byte) /EF <</F \the\pdflastobj\space 0 R>>
+  >>}
+\pdfannot{
+  /Subtype /FileAttachment /FS \the\pdflastobj\space 0 R
+  /F 2 % Flag: Hidden
+}
+\endgroup
+
+\maketitle
+
+This PDF is an OCaml bytecode.
+You can execute it:
+\begin{lstlisting}
+% ocamlrun thing.pdf
+\end{lstlisting}
+
+If you use an appropriately modern PDF viewer, this PDF also \emph{contains}
+an OCaml bytecode \cite{pocgtfo4}.
+
+\begin{thebibliography}{9}
+
+\bibitem{pocgtfo4}
+  {POC$\|$GTFO, Issue 4},
+  27 June 2014.
+
+\end{thebibliography}
+
+\end{document}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
